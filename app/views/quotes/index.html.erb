@@ -1,0 +1,7 @@
+<h1>Quotes</h1>
+<% @quotes.each do |q| %>
+  <blockquote class="card">
+    <p><em><%= q.content %></em></p>
+    <% if q.source.present? %><p>— <%= q.source %></p><% end %>
+  </blockquote>
+<% end %>

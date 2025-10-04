@@ -1,0 +1,10 @@
+<h1>Temples & Ashrams</h1>
+<div class="grid cols-3">
+  <% @temples.each do |t| %>
+    <article class="card">
+      <h2><%= link_to t.name, temple_path(t) %></h2>
+      <p><%= [t.city, t.address].compact.join(" • ") %></p>
+      <p><%= truncate(t.description.to_s, length: 140) %></p>
+    </article>
+  <% end %>
+</div>

@@ -1,0 +1,7 @@
+<article class="card">
+  <h1><%= @event.title %></h1>
+  <p><b>Date:</b> <%= @event.event_date %></p>
+  <% if @event.location.present? %><p><b>Location:</b> <%= @event.location %></p><% end %>
+  <div><%= simple_format(@event.description) %></div>
+</article>
+

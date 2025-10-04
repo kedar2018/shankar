@@ -1,0 +1,41 @@
+<section class="grid cols-3">
+  <article class="card">
+    <h2>Biography</h2>
+    <p>Read about the life and grace of Shankar Maharaj.</p>
+    <%= link_to "Read biography", page_path("biography") %>
+  </article>
+  <article class="card">
+    <h2>Teachings</h2>
+    <p>Core teachings and guidance.</p>
+    <%= link_to "Explore teachings", page_path("teachings") %>
+  </article>
+  <article class="card">
+    <h2>Events</h2>
+    <p>Upcoming satsangs and commemorations.</p>
+    <%= link_to "See events", events_path %>
+  </article>
+</section>
+
+<section style="margin-top:1.5rem;">
+  <h3>Recent Quotes</h3>
+  <ul>
+    <% @quotes.each do |q| %>
+      <li><em><%= q.content %></em><% if q.source.present? %> — <%= q.source %><% end %></li>
+    <% end %>
+  </ul>
+</section>
+
+<section style="margin-top:1.5rem;">
+  <h3>Photos</h3>
+  <div class="grid cols-3">
+    <% @photos.each do |p| %>
+      <div class="card">
+        <% if p.image.attached? %>
+          <%= image_tag p.image, alt: p.title %>
+        <% end %>
+        <h4><%= p.title %></h4>
+        <p><%= p.caption %></p>
+      </div>
+    <% end %>
+  </div>
+</section>

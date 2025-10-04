@@ -1,0 +1,8 @@
+<h1>Events</h1>
+<% @events.each do |e| %>
+  <article class="card">
+    <h2><%= link_to e.title, event_path(e) %></h2>
+    <p><b>Date:</b> <%= e.event_date %> <% if e.location.present? %>| <b>Location:</b> <%= e.location %><% end %></p>
+    <p><%= truncate(e.description.to_s, length: 160) %></p>
+  </article>
+<% end %>

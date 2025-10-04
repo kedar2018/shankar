@@ -1,0 +1,5 @@
+<article class="card">
+  <h1><%= @temple.name %></h1>
+  <p><%= [@temple.city, @temple.address].compact.join(" • ") %></p>
+  <div><%= simple_format(@temple.description) %></div>
+</article>

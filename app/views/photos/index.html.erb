@@ -1,0 +1,12 @@
+<h1>Photos</h1>
+<div class="grid cols-3">
+  <% @photos.each do |p| %>
+    <div class="card">
+      <% if p.image.attached? %>
+        <%= image_tag p.image, alt: p.title %>
+      <% end %>
+      <h3><%= p.title %></h3>
+      <p><%= p.caption %></p>
+    </div>
+  <% end %>
+</div>
